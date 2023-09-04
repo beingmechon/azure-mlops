@@ -1,0 +1,25 @@
+name: Unit Test Workflow
+
+on:
+  pull_request:
+    types:
+      - opened  # Trigger the workflow when a new pull request is created
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11.5  # Specify your desired Python version
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt  # Install your project's dependencies
+
+      - name: Run pytest
+        run: pytest src/model
