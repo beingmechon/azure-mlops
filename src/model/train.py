@@ -38,7 +38,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--training_data", dest="training_data", type=str)
-    parser.add_argument("--test_size", dest="test_size", type=float, default=0.2)
+    parser.add_argument("--test_size", dest="test_size", type=float, default=0.25)
     parser.add_argument("--random_state", dest="random_state", type=int, default=123)
     parser.add_argument("--reg_rate", dest="reg_rate", type=float, default=0.1)
 
