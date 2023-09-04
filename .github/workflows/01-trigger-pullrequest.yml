@@ -2,8 +2,8 @@ name: Trigger on pull requests
 
 on: 
   pull_request:
-    branches:
-      - master
+    types:
+      - opened
 
 jobs:
   test:
