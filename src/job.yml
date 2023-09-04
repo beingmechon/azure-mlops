@@ -1,15 +1,15 @@
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
 code: model
 command: >-
-  python 
-  --
-  --
+  python3 train.py --training_data ${{inputs.training_data}} --test_size ${{inputs.test_size}} --random_state ${{inputs.random_state}} --reg_rate ${{inputs.reg_rate}}
 inputs:
   training_data: 
-    type: uri_folder 
-    path: 
+    type: uri_file 
+    path: azureml:diab-data-dev:1
   reg_rate: 0.01
+  test_size: 0.2
+  random_state: 123
 environment: azureml:AzureML-sklearn-0.24-ubuntu18.04-py37-cpu@latest
-compute: 
-experiment_name: 
-description: 
+compute: azureml:my-ci202309011638
+experiment_name: azure-mlops
+description: azure-mlops demo projects
