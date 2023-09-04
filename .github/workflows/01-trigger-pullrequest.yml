@@ -1,0 +1,14 @@
+name: Trigger on pull requests
+
+on: 
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Placeholder
+        run: |
+          echo "Will add code checks here in next challenge"
